@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+<div class="card mx-auto justify-content-md-center" style="width: 50rem">
+  <div class="card-header" style="background-color: white;">
+    <h2>{{ cardTitle | titlecase }}</h2>
+    <h3>
+      <button ><i class="bi bi-plus-circle"></i></button> Add activity
+    </h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div>
+        <button (click)="toggleMenu()" class="fst-normal">
+          <i class="bi bi-chevron-compact-{{ sign }} fst-normal" > Discover New Features
+            <span class="badge bg-secondary">Must-have tool</span>
+          </i>
+        </button>
+      </div>
+      <div>
+        <i class="bi bi-pencil-square"></i>
+        <i class="bi bi-trash"></i>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <button (click)="toggleMenu()">
+          <i class="bi bi-chevron-compact-{{ sign }} fst-normal"> Better Workflow</i>
+        </button>
+      </div>
+      <div>
+        <i class="bi bi-pencil-square"></i>
+        <i class="bi bi-trash"></i>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <button (click)="toggleMenu()">
+          <i class="bi bi-chevron-compact-{{ sign }} fst-normal"> Achieve Greate Result</i>
+        </button>
+      </div>
+      <div>
+        <i class="bi bi-pencil-square"></i>
+        <i class="bi bi-trash"></i>
+      </div>
+    </li>
+  </ul>
+</div>
+</div>
