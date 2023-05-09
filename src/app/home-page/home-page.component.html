@@ -1,2 +1,7 @@
-<h1>{{pageTitle | titlecase}}</h1>
-<app-action-card></app-action-card>
+<h1>{{ pageTitle }}</h1>
+<app-action-card
+  [cardTitle]="cardTitle"
+  [titleColor]="titleColor"
+  *ngFor="let feature of features"
+  [features]="features"
+></app-action-card>

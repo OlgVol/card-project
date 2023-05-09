@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IFeature } from '../module/feature';
 
 @Component({
   selector: 'app-action-card',
   templateUrl: './action-card.component.html',
-  styleUrls: ['./action-card.component.scss']
+  styleUrls: ['./action-card.component.scss'],
 })
 export class ActionCardComponent {
-showFeature = false
-sign = 'up'
-cardTitle = 'Card for Organizing Activities';
+  showFeature = false;
+  sign = 'up';
+  @Input() cardTitle!: string;
+  showToDoList = false;
+  @Input() features!: IFeature[];
+  @Input() titleColor!: string;
 
-toggleMenu() {
-  if(this.sign == 'up') {
-    this.sign = 'down'
-  } else {
-    this.sign = 'up'
-  }
+  toggleMenu() {
+    this.showToDoList = !this.showToDoList;
   }
 }
-
