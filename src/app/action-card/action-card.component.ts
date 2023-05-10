@@ -8,7 +8,6 @@ import { IFeature } from '../module/feature';
 })
 export class ActionCardComponent {
   showFeature = false;
-  sign = 'up';
   @Input() cardTitle!: string;
   showToDoList = false;
   @Input() features!: IFeature[];
