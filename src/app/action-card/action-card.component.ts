@@ -8,7 +8,7 @@ import { IFeature } from '../module/feature';
 })
 export class ActionCardComponent {
   @Input() cardTitle!: string;
-  @Input() features!: IFeature[];
+  @Input() features: IFeature[] = [];
   @Input() titleColor!: string;
   showToDoList = false;
   showFeature = false;
