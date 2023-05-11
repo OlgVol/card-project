@@ -15,9 +15,9 @@ export class HomePageComponent {
       featureName: 'Discover New Features',
       canDelete: false,
       toDoList: [
-       "Interactive Dashboard",
-       "Smart Reminders",
-       "Data-driven Decision Making"
+       'Interactive Dashboard',
+       'Smart Reminders',
+       'Data-driven Decision Making',
       ]
     },
     {
