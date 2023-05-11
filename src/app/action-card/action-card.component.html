@@ -29,9 +29,11 @@
           <i class="bi bi-trash" *ngIf="feature.canDelete"></i>
         </div>
       </li>
-      <ul class="list-group todo" *ngIf="feature.toDoList && showToDoList">
+      <ng-container *ngIf="feature.toDoList && showToDoList">
+      <ul class="list-group todo">
         <li *ngFor="let toDoList of feature.toDoList">{{ toDoList }}</li>
       </ul>
+    </ng-container>
     </ul>
   </div>
 </div>
