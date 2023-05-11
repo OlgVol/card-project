@@ -1,0 +1,26 @@
+<h1>{{ pageTitle }}</h1>
+
+<app-action-card
+  titleColor="red"
+  cardTitle="Card for Organizing Activities"
+  [features]="[
+    {
+      featureName: 'Discover New Features',
+      canDelete: false,
+      toDoList: [
+        'Interactive Dashboard',
+        'Smart Reminders',
+        'Data-driven Decision Making',
+      ]
+    },
+    {
+      featureName: 'Achieve Greate Result',
+      canDelete: true,
+    },
+    {
+      featureName: 'Better Workflow',
+      canDelete: true,
+    }
+  ]"
+>
+</app-action-card>
