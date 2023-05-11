@@ -7,11 +7,11 @@ import { IFeature } from '../module/feature';
   styleUrls: ['./action-card.component.scss'],
 })
 export class ActionCardComponent {
-  showFeature = false;
   @Input() cardTitle!: string;
-  showToDoList = false;
   @Input() features!: IFeature[];
   @Input() titleColor!: string;
+  showToDoList = false;
+  showFeature = false;
 
   toggleMenu() {
     this.showToDoList = !this.showToDoList;
