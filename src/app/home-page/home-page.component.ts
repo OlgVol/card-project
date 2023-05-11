@@ -8,17 +8,18 @@ import { IFeature } from '../module/feature';
 })
 export class HomePageComponent {
   pageTitle = 'Home Page';
-  titleColor= "red";
+  titleColor = 'red';
   cardTitle = 'Card for Organizing Activities';
+  fetures = 'features';
   features: IFeature[] = [
     {
       featureName: 'Discover New Features',
       canDelete: false,
       toDoList: [
-       'Interactive Dashboard',
-       'Smart Reminders',
-       'Data-driven Decision Making',
-      ]
+        'Interactive Dashboard',
+        'Smart Reminders',
+        'Data-driven Decision Making',
+      ],
     },
     {
       featureName: 'Achieve Greate Result',
