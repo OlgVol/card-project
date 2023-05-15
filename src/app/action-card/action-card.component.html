@@ -9,7 +9,7 @@
         <button><i class="bi bi-plus-circle"></i></button> Add activity
       </h3>
     </div>
-    <ul class="list-group list-group-flush" *ngFor="let feature of features">
+    <!-- <ul class="list-group list-group-flush" *ngFor="let feature of features">
       <li class="list-group-item">
         <div>
           <button (click)="toggleMenu()" class="fst-normal">
@@ -50,12 +50,18 @@
           </span>
           <i class="bi bi-trash" *ngIf="feature.canDelete"></i>
         </div>
-      </li>
-      <ng-container *ngIf="feature.toDoList && showToDoList">
+      </li> -->
+
+      <!-- <ng-container *ngIf="feature.toDoList && showToDoList">
         <ul class="list-group todo">
           <li *ngFor="let toDoList of feature.toDoList">{{ toDoList }}</li>
         </ul>
-      </ng-container>
-    </ul>
+      </ng-container> -->
+    <!-- </ul> -->
+        <ng-container *ngFor="let row of features">
+      <app-action-card-row [row]="row" >
+
+      </app-action-card-row>
+    </ng-container>
   </div>
 </div>

@@ -1,0 +1,45 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <div>
+      <button (click)="toggleMenu()" class="fst-normal">
+        <i
+          class="bi bi-chevron-compact-down fst-normal"
+          *ngIf="showToDoList"
+        ></i>
+        <i
+          class="bi bi-chevron-compact-up fst-normal"
+          *ngIf="!showToDoList"
+        ></i>
+        {{ row.featureName }}
+        <span class="badge bg-secondary" *ngIf="!row.canDelete"
+          >Must-have tool</span
+        >
+      </button>
+    </div>
+    <div>
+      <i class="bi bi-pencil-square"></i>
+      <span
+        class="d-inline-block"
+        tabindex="0"
+        data-toggle="popover"
+        data-trigger="hover focus"
+        data-title="Do you want to delete this feature? First create another “must have tool”."
+        data-content="There must be at least one “Must have tool” in your list. If you wish to delete this feature, you first need to create another feature with the same badge."
+        data-container="body"
+        data-bs-custom-class="custom-popover"
+      >
+        <button class="btn" type="button" disabled *ngIf="!row.canDelete">
+          Delete?
+        </button>
+      </span>
+      <i class="bi bi-trash" *ngIf="row.canDelete"></i>
+    </div>
+  </li>
+  <ng-container *ngIf="row.toDoList && showToDoList">
+    <ul class="list-group todo ">
+      <li *ngFor="let toDoList of row.toDoList">{{ toDoList }}</li>
+    </ul>
+  </ng-container>
+
+</ul>
+<hr>

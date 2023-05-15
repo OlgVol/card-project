@@ -10,10 +10,4 @@ export class ActionCardComponent {
   @Input() cardTitle!: string;
   @Input() features: IFeature[] = [];
   @Input() titleColor!: string;
-  showToDoList = false;
-  showFeature = false;
-
-  toggleMenu() {
-    this.showToDoList = !this.showToDoList;
-  }
 }

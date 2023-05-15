@@ -1,26 +1,11 @@
 .card-header {
   display: inline-flex;
   justify-content: space-between;
+  border: none;
 }
 button {
   border: none;
   background-color: white;
   font-weight: bold;
-}
-li {
-  display: inline-flex;
-  justify-content: space-between;
-}
-.custom-popover {
-  --bs-popover-max-width: 200px;
-  --bs-popover-border-color: var(--bs-primary);
-  --bs-popover-header-bg: var(--bs-primary);
-  --bs-popover-header-color: var(--bs-white);
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: .5rem;
-}
-ul.todo {
-  font-size: small;
-  margin-left: 15px;
 }
 
