@@ -17,7 +17,7 @@
       </button>
     </div>
     <div>
-      <i class="bi bi-pencil-square"></i>
+      <button><i class="bi bi-pencil-square" (click)="onEdit()"></i></button>
       <span
         class="d-inline-block"
         tabindex="0"
@@ -32,14 +32,15 @@
           Delete?
         </button>
       </span>
-      <i class="bi bi-trash" *ngIf="row.canDelete"></i>
+      <button>
+        <i class="bi bi-trash" *ngIf="row.canDelete" (click)="onDelete()"></i>
+      </button>
     </div>
   </li>
   <ng-container *ngIf="row.toDoList && showToDoList">
-    <ul class="list-group todo ">
+    <ul class="list-group todo">
       <li *ngFor="let toDoList of row.toDoList">{{ toDoList }}</li>
     </ul>
   </ng-container>
-
 </ul>
-<hr>
+<hr />

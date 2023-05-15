@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
   pageTitle = 'Home Page';
+
+  Delete() {
+    console.log('row deleted');
+  }
+
+  Edit() {
+    console.log('row edited');
+  }
 }
