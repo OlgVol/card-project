@@ -16,19 +16,13 @@ li {
   --bs-popover-header-bg: var(--bs-primary);
   --bs-popover-header-color: var(--bs-white);
   --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: .5rem;
+  --bs-popover-body-padding-y: 0.5rem;
 }
 ul.todo {
   font-size: small;
   margin-left: 80px;
 }
-.todo li{
+.todo li {
   margin-top: 1px;
   margin-bottom: 1px;
 }
-// .list-group-flush {
-//   border-bottom: 2px solid grey;
-// }
-
-
-
