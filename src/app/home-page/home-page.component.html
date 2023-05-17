@@ -1,11 +1,14 @@
 <h1>{{ pageTitle }}</h1>
 
-<app-action-card titleColor="black" cardTitle="Card for Organizing Activities">
+<app-action-card titleColor="black" cardTitle="Card for Organizing Activities"
+>
   <app-action-card-row
     *ngFor="let row of features"
     (deleteRow)="onDelete()"
     (editRow)="onEdit()"
     [row]="row"
+    [popoverTitle]="popoverTitle"
+    [popoverContent]="popoverContent"
   >
   </app-action-card-row>
 </app-action-card>

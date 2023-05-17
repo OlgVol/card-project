@@ -8,6 +8,8 @@ import { IFeature } from '../module/feature';
 })
 export class ActionCardRowComponent {
   @Input() row!: IFeature;
+  @Input() popoverTitle!: string;
+  @Input() popoverContent!: string;
   @Output() deleteRow = new EventEmitter();
   @Output() editRow = new EventEmitter();
   showToDoList = false;
