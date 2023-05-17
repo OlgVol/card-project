@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IFeature } from '../module/feature';
 
 @Component({
@@ -10,10 +10,13 @@ export class ActionCardComponent {
   @Input() cardTitle!: string;
   @Input() features: IFeature[] = [];
   @Input() titleColor!: string;
-  showToDoList = false;
-  showFeature = false;
+  @Output() deleteRow = new EventEmitter();
+  @Output() editRow = new EventEmitter();
 
-  toggleMenu() {
-    this.showToDoList = !this.showToDoList;
+  onDelete() {
+    this.deleteRow.emit();
+  }
+  onEdit() {
+    this.editRow.emit();
   }
 }

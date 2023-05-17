@@ -1,0 +1,28 @@
+button {
+  border: none;
+  background-color: white;
+  font-weight: bold;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: none;
+  margin: 20px;
+}
+.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: var(--bs-primary);
+  --bs-popover-header-bg: var(--bs-primary);
+  --bs-popover-header-color: var(--bs-white);
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.5rem;
+}
+ul.todo {
+  font-size: small;
+  margin-left: 80px;
+}
+.todo li {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
