@@ -26,6 +26,9 @@ ul.todo {
   margin-top: 1px;
   margin-bottom: 1px;
 }
-.card-row:not(:last-child) {
-  border-bottom: 2px solid grey;
-}
+// .card-row:not(.last) {
+// border-bottom: 2px solid grey;
+// }
+// .last {
+//   border-bottom: none;
+// }

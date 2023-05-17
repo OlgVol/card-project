@@ -32,7 +32,8 @@ export class HomePageComponent {
   popoverContent =
     'There must be at least one “Must have tool” in your list. If you wish to delete this feature, you first need to create another feature with the same badge.';
 
-  onDelete() {
+
+    onDelete() {
     console.log('row deleted');
   }
 

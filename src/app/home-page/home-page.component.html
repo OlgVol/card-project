@@ -3,7 +3,7 @@
 <app-action-card titleColor="black" cardTitle="Card for Organizing Activities"
 >
   <app-action-card-row
-    *ngFor="let row of features"
+    *ngFor="let row of features; let last = last" [ngClass]="{last: last}"
     (deleteRow)="onDelete()"
     (editRow)="onEdit()"
     [row]="row"
