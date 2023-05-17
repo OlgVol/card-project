@@ -1,5 +1,5 @@
 <div
-  class="d-flex justify-content-center align-items-center card"
+  class="d-flex justify-content-center align-items-center"
   style="height: 100vh"
 >
   <div class="card mx-auto justify-content-md-center" style="width: 50rem">
@@ -9,13 +9,6 @@
         <button><i class="bi bi-plus-circle"></i></button> Add activity
       </h3>
     </div>
-    <ng-container *ngFor="let row of features">
-      <app-action-card-row
-        [row]="row"
-        (deleteRow)="onDelete()"
-        (editRow)="onEdit()"
-      >
-      </app-action-card-row>
-    </ng-container>
+    <ng-content></ng-content>
   </div>
 </div>
