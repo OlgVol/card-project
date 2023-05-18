@@ -9,7 +9,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     $(function() {
-      $('[data-toggle="popover"').popover()
+      $('[data-toggle="popover"]').popover()
     })
   }
 }

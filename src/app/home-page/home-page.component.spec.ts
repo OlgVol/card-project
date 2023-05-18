@@ -21,4 +21,16 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should to log the message', () => {
+    const consoleDeleteSpy = spyOn(console, 'log');
+    component.onDelete();
+    expect(consoleDeleteSpy).toHaveBeenCalledWith('row deleted')
+  })
+
+  it('should to log the message', () => {
+    const consoleEditSpy = spyOn(console, 'log');
+    component.onEdit();
+    expect(consoleEditSpy).toHaveBeenCalledWith('row edited')
+  })
 });

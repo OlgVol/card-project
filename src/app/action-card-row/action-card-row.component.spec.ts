@@ -20,4 +20,21 @@ describe('ActionCardRowComponent', () => {
   it('should create with', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call toggleMenu function', () => {
+    component.toggleMenu();
+    expect(component.showToDoList).toBeTrue();
+    component.toggleMenu();
+    expect(component.showToDoList).toBeFalse();
+  })
+  it('should emit deleteRow event', () => {
+    const deleteRowSpy = spyOn(component.deleteRow, 'emit');
+    component.onDelete();
+    expect(deleteRowSpy).toHaveBeenCalled();
+  })
+  it('should emit onEdit event', () => {
+    const editSpy = spyOn(component.editRow, 'emit');
+    component.onEdit();
+    expect(editSpy).toHaveBeenCalled();
+  })
 });
