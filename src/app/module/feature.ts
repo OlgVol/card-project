@@ -1,5 +1,5 @@
 export interface IFeature {
   featureName: string;
-  canDelete: boolean;
+  canDelete?: boolean;
   toDoList?: string[ ];
 }

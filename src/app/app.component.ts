@@ -6,7 +6,6 @@ declare var $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'card-project';
 
   ngAfterViewInit(): void {
     $(function() {

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ActionCardRowComponent } from './action-card-row.component';
 
 describe('ActionCardRowComponent', () => {
@@ -14,10 +13,11 @@ describe('ActionCardRowComponent', () => {
 
     fixture = TestBed.createComponent(ActionCardRowComponent);
     component = fixture.componentInstance;
+    component.row = { featureName: 'Sample Feature'};
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create with', () => {
     expect(component).toBeTruthy();
   });
 });
