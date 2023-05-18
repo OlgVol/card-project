@@ -1,28 +1,14 @@
 <h1>{{ pageTitle }}</h1>
 
-<app-action-card
-  titleColor="black"
-  cardTitle="Card for Organizing Activities"
-  [features]="[
-    {
-      featureName: 'Discover New Features',
-      canDelete: false,
-      toDoList: [
-        'Interactive Dashboard',
-        'Smart Reminders',
-        'Data-driven Decision Making',
-      ]
-    },
-    {
-      featureName: 'Achieve Greate Result',
-      canDelete: true,
-    },
-    {
-      featureName: 'Better Workflow',
-      canDelete: true,
-    }
-  ]"
-  (deleteRow)="Delete()"
-  (editRow)="Edit()"
+<app-action-card titleColor="black" cardTitle="Card for Organizing Activities"
 >
+  <app-action-card-row
+    *ngFor="let row of features; let last = last" [ngClass]="{last: last}"
+    (deleteRow)="onDelete()"
+    (editRow)="onEdit()"
+    [row]="row"
+    [popoverTitle]="popoverTitle"
+    [popoverContent]="popoverContent"
+  >
+  </app-action-card-row>
 </app-action-card>

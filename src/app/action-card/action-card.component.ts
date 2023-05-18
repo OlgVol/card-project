@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IFeature } from '../module/feature';
 
 @Component({
@@ -10,13 +10,4 @@ export class ActionCardComponent {
   @Input() cardTitle!: string;
   @Input() features: IFeature[] = [];
   @Input() titleColor!: string;
-  @Output() deleteRow = new EventEmitter();
-  @Output() editRow = new EventEmitter();
-
-  onDelete() {
-    this.deleteRow.emit();
-  }
-  onEdit() {
-    this.editRow.emit();
-  }
 }
