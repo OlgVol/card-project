@@ -1,34 +1,22 @@
+@import '../../variables.scss';
+
 button {
   border: none;
-  background-color: white;
-  font-weight: bold;
+  background-color: $primary-color;
+  font-weight: $font-bold;
 }
 li {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   border: none;
-  margin: 20px;
+  margin: $spacing-bs;
 }
-.custom-popover {
-  --bs-popover-max-width: 200px;
-  --bs-popover-border-color: var(--bs-primary);
-  --bs-popover-header-bg: var(--bs-primary);
-  --bs-popover-header-color: var(--bs-white);
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: 0.5rem;
-}
+
 ul.todo {
-  font-size: small;
-  margin-left: 80px;
+  font-size: $font-small;
+  margin-left: $spacing-side;
 }
 .todo li {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin: $spacing-li;
 }
-// .card-row:not(.last) {
-// border-bottom: 2px solid grey;
-// }
-// .last {
-//   border-bottom: none;
-// }

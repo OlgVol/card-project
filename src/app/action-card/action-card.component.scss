@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .card-header {
   display: inline-flex;
   justify-content: space-between;
@@ -5,9 +7,9 @@
 }
 button {
   border: none;
-  background-color: white;
-  font-weight: bold;
+  background-color: $primary-color;
+  font-weight: $font-bold;
 }
 .card {
-  padding: 50px 50px 0 50px;
+  padding: $spacing-card;
 }
