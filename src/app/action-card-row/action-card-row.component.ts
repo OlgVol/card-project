@@ -14,7 +14,6 @@ export class ActionCardRowComponent {
   @Output() editRow = new EventEmitter();
   showToDoList = false;
   showFeature = false;
-
   toggleMenu() {
     this.showToDoList = !this.showToDoList;
   }
