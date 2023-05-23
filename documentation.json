@@ -103,7 +103,7 @@
         },
         {
             "name": "ActionCardComponent",
-            "id": "component-ActionCardComponent-ebb384775d2052962e21d248724fa386bfaf55517b05c98c4838b24af87d0e464aff3b88eea61274c75caf4fbc00ea0ca08200a7a0dd83fa8d7b882b638f58c9",
+            "id": "component-ActionCardComponent-5f26c9c44857d6823dd11109714b32522acb3ace4dd1f58ea4c3457706f1f7fbe4fde3fc6361121fb0da7a4b0f3cb27de85f98c0119f37ffbd410fe5aa934a70",
             "file": "src/app/action-card/action-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -156,7 +156,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { IFeature } from '../module/feature';\r\n\r\n@Component({\r\n  selector: 'app-action-card',\r\n  templateUrl: './action-card.component.html',\r\n  styleUrls: ['./action-card.component.scss'],\r\n})\r\nexport class ActionCardComponent {\r\n  @Input() cardTitle!: string;\r\n  @Input() features: IFeature[] = [];\r\n  @Input() titleColor!: string;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { IFeature } from '../module/feature';\r\n\r\n@Component({\r\n  selector: 'app-action-card',\r\n  templateUrl: './action-card.component.html',\r\n  styleUrls: ['./action-card.component.scss'],\r\n})\r\nexport class ActionCardComponent {\r\n  @Input() cardTitle!: string;\r\n  @Input() features: IFeature[] = [];\r\n  @Input() titleColor!: string;\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -845,6 +845,16 @@
                 "type": "any"
             },
             {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/action-card-row/action-card-row.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  deleteRow: action('Delete Row'),\r\n  editRow: action('Edit Row'),\r\n}"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -982,7 +992,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ActionCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  moduleMetadata: {\r\n    declarations: [ActionCardRowComponent],\r\n  },\r\n  actions: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n    onDelete: RowStories.actionsData.deleteRow,\r\n    onEdit: RowStories.actionsData.editRow,\r\n  },\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
             }
         ],
         "functions": [],
@@ -1034,6 +1044,18 @@
                     "type": "any"
                 }
             ],
+            "src/app/action-card-row/action-card-row.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/action-card-row/action-card-row.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  deleteRow: action('Delete Row'),\r\n  editRow: action('Edit Row'),\r\n}"
+                }
+            ],
             "src/app/action-card/action-card.stories.ts": [
                 {
                     "name": "Default",
@@ -1053,7 +1075,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ActionCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  moduleMetadata: {\r\n    declarations: [ActionCardRowComponent],\r\n  },\r\n  actions: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n    onDelete: RowStories.actionsData.deleteRow,\r\n    onEdit: RowStories.actionsData.editRow,\r\n  },\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1282,6 +1304,16 @@
                 "name": "ActionCardRowComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/action-card-row/action-card-row.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

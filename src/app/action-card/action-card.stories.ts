@@ -2,7 +2,6 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ActionCardComponent } from './action-card.component';
 import { IFeature } from '../module/feature';
 import { ActionCardRowComponent } from '../action-card-row/action-card-row.component';
-import * as RowStories from '../action-card-row/action-card-row.stories';
 import { CommonModule } from '@angular/common';
 
 export default {
@@ -17,10 +16,14 @@ export default {
 } as Meta;
 
 const Template: Story<ActionCardComponent> = (args) => ({
-  props: {
+  props:{
     ...args,
-    onDelete: RowStories.actionsData.deleteRow,
-    onEdit: RowStories.actionsData.editRow,
+    onDelete: () => {
+      alert('Row deleted');
+    },
+    onEdit: () => {
+      alert('Row edited');
+    },
   },
   template: `
     <div>
@@ -49,7 +52,7 @@ const Template: Story<ActionCardComponent> = (args) => ({
     .custom-popover {
       max-width: 200px;
     }
-    `,
+    `
   ],
 });
 
