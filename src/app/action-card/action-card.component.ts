@@ -11,3 +11,4 @@ export class ActionCardComponent {
   @Input() features: IFeature[] = [];
   @Input() titleColor!: string;
 }
+
