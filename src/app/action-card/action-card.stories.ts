@@ -2,19 +2,26 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { ActionCardComponent } from './action-card.component';
 import { IFeature } from '../module/feature';
 import { ActionCardRowComponent } from '../action-card-row/action-card-row.component';
+import * as RowStories from '../action-card-row/action-card-row.stories';
+import { CommonModule } from '@angular/common';
 
 export default {
   title: 'Components/ActionCard',
   component: ActionCardComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ActionCardRowComponent],
+      declarations: [ActionCardRowComponent, ActionCardComponent],
+      imports: [CommonModule],
     }),
   ],
 } as Meta;
 
 const Template: Story<ActionCardComponent> = (args) => ({
-  props: args,
+  props: {
+    ...args,
+    onDelete: RowStories.actionsData.deleteRow,
+    onEdit: RowStories.actionsData.editRow,
+  },
   template: `
     <div>
     <link
@@ -30,13 +37,20 @@ const Template: Story<ActionCardComponent> = (args) => ({
             [row]="feature"
             [popoverTitle]="'Popover Title'"
             [popoverContent]="'Popover Content'"
-            (deleteRow)="onDeleteRow(feature)"
-            (editRow)="onEditRow(feature)"
+            (deleteRow)="onDelete()"
+            (editRow)="onEdit()"
           ></app-action-card-row>
         </ng-container>
       </app-action-card>
     </div>
   `,
+  styles: [
+    `
+    .custom-popover {
+      max-width: 200px;
+    }
+    `,
+  ],
 });
 
 export const Default = Template.bind({});
@@ -61,4 +75,3 @@ Default.args = {
   ] as IFeature[],
   titleColor: 'red',
 };
-

@@ -848,21 +848,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/action-card-row/action-card-row.stories.ts",
+                "file": "src/app/action-card/action-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "feature",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/action-card-row/action-card-row.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IFeature",
-                "defaultValue": "{\r\n  featureName: 'Awesome Feature',\r\n  canDelete: false,\r\n  toDoList: ['Task 1', 'Task 2', 'Task 3'],\r\n}"
             },
             {
                 "name": "Large",
@@ -988,11 +978,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/action-card-row/action-card-row.stories.ts",
+                "file": "src/app/action-card/action-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ActionCardRowComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n      <link\r\n       rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n      >\r\n      <div class=\"container mt-5\">\r\n        <app-action-card-row\r\n        [row]=\"row\"\r\n        [popoverTitle]=\"popoverTitle\"\r\n        [popoverContent]=\"popoverContent\"\r\n        (deleteRow)=\"onDelete()\"\r\n        (editRow)=\"onEdit()\"\r\n        ></app-action-card-row>\r\n      </div>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  methods: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
+                "type": "Story<ActionCardComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  moduleMetadata: {\r\n    declarations: [ActionCardRowComponent],\r\n  },\r\n  actions: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
             }
         ],
         "functions": [],
@@ -1044,36 +1034,26 @@
                     "type": "any"
                 }
             ],
-            "src/app/action-card-row/action-card-row.stories.ts": [
+            "src/app/action-card/action-card.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/action-card-row/action-card-row.stories.ts",
+                    "file": "src/app/action-card/action-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "feature",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/action-card-row/action-card-row.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "IFeature",
-                    "defaultValue": "{\r\n  featureName: 'Awesome Feature',\r\n  canDelete: false,\r\n  toDoList: ['Task 1', 'Task 2', 'Task 3'],\r\n}"
-                },
-                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/action-card-row/action-card-row.stories.ts",
+                    "file": "src/app/action-card/action-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<ActionCardRowComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n      <link\r\n       rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n      >\r\n      <div class=\"container mt-5\">\r\n        <app-action-card-row\r\n        [row]=\"row\"\r\n        [popoverTitle]=\"popoverTitle\"\r\n        [popoverContent]=\"popoverContent\"\r\n        (deleteRow)=\"onDelete()\"\r\n        (editRow)=\"onEdit()\"\r\n        ></app-action-card-row>\r\n      </div>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  methods: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
+                    "type": "Story<ActionCardComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div>\r\n    <link\r\n    rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\"\r\n   >\r\n      <app-action-card\r\n        [cardTitle]=\"cardTitle\"\r\n        [features]=\"features\"\r\n        [titleColor]=\"titleColor\"\r\n      >\r\n        <ng-container *ngFor=\"let feature of features\">\r\n          <app-action-card-row\r\n            [row]=\"feature\"\r\n            [popoverTitle]=\"'Popover Title'\"\r\n            [popoverContent]=\"'Popover Content'\"\r\n            (deleteRow)=\"onDelete()\"\r\n            (editRow)=\"onEdit()\"\r\n          ></app-action-card-row>\r\n        </ng-container>\r\n      </app-action-card>\r\n    </div>\r\n  `,\r\n  styles: [\r\n    `\r\n    .custom-popover {\r\n      max-width: 200px;\r\n    }\r\n    `,\r\n  ],\r\n  moduleMetadata: {\r\n    declarations: [ActionCardRowComponent],\r\n  },\r\n  actions: {\r\n    onDelete: action('Delete Row'),\r\n    onEdit: action('Edit Row'),\r\n  },\r\n})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1305,7 +1285,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/action-card-row/action-card-row.stories.ts",
+                "filePath": "src/app/action-card/action-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ActionCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/action-card/action-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1315,32 +1304,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/action-card-row/action-card-row.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "feature",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/action-card-row/action-card-row.stories.ts",
+                "filePath": "src/app/action-card/action-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/action-card/action-card.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ActionCardComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
                 "status": "low"
             },
             {
